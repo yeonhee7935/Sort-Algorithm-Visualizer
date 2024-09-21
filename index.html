@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sorting Algorithm Visualizer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sorting Algorithm Visualizer</h1>
+
+      <div class="controls">
+        <input
+          type="text"
+          id="inputArray"
+          placeholder="Enter numbers separated by commas"
+        />
+        <select id="algorithm">
+          <option value="bubble">Bubble Sort</option>
+          <!-- Add other algorithms here later -->
+        </select>
+        <button id="startSort">Start Sorting</button>
+      </div>
+
+      <div class="visualization-container">
+        <div class="visualization">
+          <div id="arrayBars"></div>
+        </div>
+        <div class="code-display">
+          <pre id="codeSnippet">
+function bubbleSort(arr) {
+  let swapped;
+  for (let i = 0; i < arr.length; i++) {
+    swapped = false;
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        // Swap
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        swapped = true;
+      }
+    }
+    if (!swapped) break;
+  }
+  return arr;
+}
+        </pre
+          >
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button id="prevStep">Previous Step</button>
+        <button id="nextStep">Next Step</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
